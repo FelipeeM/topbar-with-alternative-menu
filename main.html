@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .menu_default {
+      position: absolute;
+      left: -10px;
+      text-align: center;
+      box-shadow: 0px 0px 14px 8px rgba(50, 50, 50, 0.8);
+      width: 150%;
+      height: 220px;
+      transform-origin: bottom left;
+      rotate: -90deg;
+      animation-timing-function: ease-out;
+    }
+
+    .menu_0 {
+      top: 30px;
+      background-color: #ff5e40;
+      animation: frameAnimationOpenMenu_0 1.4s forwards;
+    }
+
+    .menu_1 {
+      top: 0px;
+      background-color: #ff4a31;
+      animation: frameAnimationOpenMenu_1 1.3s forwards;
+    }
+
+    .menu_2 {
+      top: -30px;
+      background-color: #ea3521;
+      animation: frameAnimationOpenMenu_2 1.2s forwards;
+    }
+
+    .menu_3 {
+      top: -60px;
+      background-color: #d51b11;
+      animation: frameAnimationOpenMenu_3 1.1s forwards;
+    }
+
+    .menu_4 {
+      top: -120px;
+      height: 250px;
+      animation: frameAnimationOpenMenu_4 1s forwards;
+      background-color: #CF035C;
+    }
+
+    .text_menu {
+      color: white;
+      font-family: sans-serif;
+      font-size: 50px;
+      font-weight: 900;
+      position: relative;
+      top: 115px;
+    }
+
+    .menu_list {
+      display: none;
+    }
+
+    .top_bar {
+      box-shadow: 0px 0px 14px 8px rgba(50, 50, 50, 0.8);
+      height: 100px;
+      position: relative;
+      width: 200%;
+      background-color: #2905A1;
+      padding: 0px;
+    }
+
+    .animationOpen {
+      transform-origin: bottom left;
+      animation: frameAnimationOpenMenu_0 1s forwards;
+      animation: frameAnimationOpenMenu_1 1s forwards;
+      animation: frameAnimationOpenMenu_2 1s forwards;
+      animation: frameAnimationOpenMenu_3 1s forwards;
+      animation: frameAnimationOpenMenu_4 1s forwards;
+      animation: frameAnimationOpen 1s forwards;
+      animation-timing-function: ease-out;
+    }
+
+    @keyframes frameAnimationOpenMenu_0 {
+      to {
+        rotate: 32deg;
+      }
+    }
+
+    @keyframes frameAnimationOpenMenu_1 {
+      to {
+        rotate: 26deg;
+      }
+    }
+
+    @keyframes frameAnimationOpenMenu_2 {
+      to {
+        rotate: 20deg;
+      }
+    }
+
+    @keyframes frameAnimationOpenMenu_3 {
+      to {
+        rotate: 14deg;
+      }
+    }
+
+    @keyframes frameAnimationOpenMenu_4 {
+      to {
+        rotate: 8deg;
+      }
+    }
+
+    .animationClose {
+      transform-origin: bottom left;
+      animation: frameAnimationClose 1s forwards;
+      animation-timing-function: ease-out;
+
+    }
+
+    @keyframes frameAnimationClose {
+      to {
+        rotate: -180deg;
+        display: none;
+      }
+    }
+
+    body {
+      margin: 0px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu_list" class="menu_list">
+    <div class="menu_default menu_0"><span class="text_menu">MENU 1</span></div>
+    <div class="menu_default menu_1"><span class="text_menu">MENU 2</span></div>
+    <div class="menu_default menu_2"><span class="text_menu">MENU 3</span></div>
+    <div class="menu_default menu_3"><span class="text_menu">MENU 4</span> </div>
+    <div class="menu_default menu_4"><span class="text_menu">MENU 5</span></div>
+  </div>
+  <div class="top_bar">
+    <button onclick="actionMenu()"> teste </button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function actionMenu() {
+    const classMenuList = document.getElementById("menu_list").classList
+    document.getElementById("menu_list").classList.remove("menu_list");
+  }
+</script>
